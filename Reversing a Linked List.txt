@@ -1,0 +1,27 @@
+// ITERATIVE METHOD
+node* reverse(node* &head){
+  node* prevptr=NULL;
+  node* currptr=head;
+  node* nextptr;
+  while(currptr!=NULL){
+    nextptr=currptr->next;
+    currptr->next=prevptr;
+    prevptr=currptr;
+    currptr=nextptr;
+    }
+  return prevptr;
+  }
+int main(){
+  if(head==NULL || head->next==NULL){
+    return head;
+    }
+  node* newhead=reverse(head);
+
+// RECURSIVE METHOD
+  node* recrev(node* &head){
+    node* newhead=recrev(head->next);
+  }
+  head->next->next=head;
+  head->next=NULL;
+  return newhead;
+  }

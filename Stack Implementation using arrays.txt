@@ -1,0 +1,35 @@
+#include<iostream>
+#define n 100
+class stack{
+int* arr;
+int top;
+public:
+stack(){
+arr=new int[n];
+top=-1;
+}
+void push(int x){
+if(top==n-1){
+cout<<"Stack Overflow"<<endl;
+return;
+}
+top++;
+arr[top]=x;
+}
+void pop(){
+if(top==-1){
+cout<<"Stack Underdflow";
+return;
+}
+top--;
+}
+void TOP(){
+if(top==-1){
+cout<<"Empty Stack"<<endl;
+return;
+}
+return arr[top];
+}
+bool isempty(){
+return top==-1;
+}
